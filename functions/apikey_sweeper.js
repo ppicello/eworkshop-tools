@@ -2,7 +2,8 @@ exports = async function(request, response){
   const httpClient = require("urllib");
   const user = "zownxxxx";
   const pass = "6f31d094-1e68-4977-8284-xxx";
-  const uri = "https://cloud.mongodb.com/api/atlas/v1.0/orgs/620d233ab66b6053747cxxxx/apiKeys";
+  const uri = "https://cloud.mongodb.com/api/atlas/v1.0/orgs/xxxd233ab66b6053747cxxxx/apiKeys?itemsPerPage=200";
+  const uri_delete = "https://cloud.mongodb.com/api/atlas/v1.0/orgs/xxxd233ab66b6053747cxxxx/apiKeys";
   let data_obj = null
 
   const options = {
@@ -27,7 +28,7 @@ exports = async function(request, response){
       }
       if(deleteThis == true ) {
         let apikeyid = data_obj.results[i].id
-        let delete_uri = uri + "/" + apikeyid // Remove One Organization API Key
+        let delete_uri = uri_delete + "/" + apikeyid // Remove One Organization API Key
         
         const options_delete = {
           method: "DELETE",
